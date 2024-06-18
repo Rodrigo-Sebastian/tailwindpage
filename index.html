@@ -5,13 +5,74 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
-    <title>Vite App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <title>Vite App</title>
   </head>
-  <body>
-    <h1 class="text-3xl font-bold underline">
-      Hello World
-    </h1>
-    <div id="app"></div>
+  <body class="bg-slate-900">
+    <!--Header-->
+    <header class="flex flex-row items-center justify-between p-8">
+      <div class="w-[35px] flex flex-row items-center gap-2">
+        <img src="/public/Tailwind_CSS_Logo.svg.png" alt="" srcset="">
+        <h1 class="text-xl text-white font-semibold">Tailwindcss</h1>
+      </div>
+      <!--Hamburger-->
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-white focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <!--Menu items-->
+      <div id="menu" class="hidden md:flex md:flex-row items-center gap-4">
+        <ul class="flex flex-col md:flex-row gap-6 font-semibold text-[16px] text-white">
+          <li><a href="">Docs</a></li>
+          <li><a href="">Components</a></li>
+          <li><a href="">Blog</a></li>
+          <li><a href="">Showcase</a></li>
+        </ul>
+        <h1 class="font-semibold text-white hidden md:block">|</h1>
+        <div class="icons flex flex-col md:flex-row gap-4 text-[20px] text-white">
+          <a href=""><i class="fa-regular fa-moon"></i></a>
+          <a href=""><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+     <!-- Dropdown menu -->
+  <div id="dropdown-menu" class="hidden flex-col items-center absolute top-[76px] right-[10px] w-[200px] rounded-md bg-gray-800 p-4 md:hidden">
+    <ul class="flex flex-col gap-6 font-semibold text-[16px] text-white">
+      <li><a href="">Docs</a></li>
+      <li><a href="">Components</a></li>
+      <li><a href="">Blog</a></li>
+      <li><a href="">Showcase</a></li>
+    </ul>
+    <h1 class="font-semibold text-white">|</h1>
+    <div class="icons flex flex-col gap-4 text-[20px] text-white">
+      <a href=""><i class="fa-regular fa-moon"></i></a>
+      <a href=""><i class="fa-brands fa-github"></i></a>
+    </div>
+  </div> 
+    </header>
+    <!--Hero Section-->
+    <main class="flex flex-col items-center justify-center gap-8 h-[80vh]">
+      <h1 class="sm:w-[300px] text-4xl text-center lg:text-6xl font-bold lg:w-[950px] text-white">Rapidly build modern websites without ever leaving your HTML.
+      </h1>
+      <p class="w-[450px] text-xl text-center lg:text-xl font-semibold lg:w-[750px] text-white">A utility-first CSS framework packed with classes like <span class="text-blue-600">flex</span>, <span class="text-blue-600">pt-4</span>, <span class="text-blue-600">text-center</span> and <span class="text-blue-600">rotate-90</span> that can be composed to build any design, directly in your markup.
+      </p>
+      <div class="flex flex-row gap-8">
+        <a class="bg-blue-400 p-4 px-6 rounded-lg text-white font-semibold" href="">get started</a>
+        <div class="flex flex-row justify-between rounded-lg w-[300px] p-4 bg-slate-700">
+          <div class="flex flex-row gap-4 text-gray-300">
+            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            <span>Quick search...</span>
+          </div>
+          <h1 class="text-gray-500 font-semibold">Ctrl K</h1>
+        </div>
+      </div>
+    </main>
+    <script>
+      // JavaScript for toggling the menu
+      document.getElementById('menu-btn').addEventListener('click', function() {
+        var dropdownMenu = document.getElementById('dropdown-menu');
+        dropdownMenu.classList.toggle('hidden');
+      });
+    </script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
